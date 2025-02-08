@@ -58,7 +58,7 @@ const fetchJSON = async filex => {
 // Hàm hợp nhất hai file JSON 
 const loadAndMergeJSONFiles = async () => {
     const [data1, data2] = await Promise.all([fetchJSON(file1), fetchJSON(file2)]);
-    mergedData = [...data1, ...data2];
+    mergedData = [...data2, ...data1];
 }
 
 // Lọc dữ liệu dựa trên từ khóa tìm kiếm
