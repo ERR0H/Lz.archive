@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset and Fonts */
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif; 
+    font-weight: 200; 
+    font-style: normal;
+}
+
+body::-webkit-scrollbar {
+    width: 0; 
+    display: none;
+}
+
+/* Body */
+body {
+    background-color: #fbeedf; /* Màu nền sáng */
+    color: #333333; /* Màu chữ đậm */
+    padding-top: 5rem; /* Khoảng trống phía trên để tránh bị che khuất */
+}
+
+/* Container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Style for Object */
+.asset {
+    background-color: white; 
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.asset:hover {
+    transform: translateY(-5px);
+}
+
+.asset .information { 
+    padding: 10px;
+    font-size: 22px; 
+    text-align: center;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%; 
+    height: 15rem; 
+    object-fit: cover;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền đen với độ trong suốt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.image-overlay a {
+    color: #ffffff; /* Màu trắng */
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.image-overlay a:hover {
+    color: #ff8c00; /* Màu cam nhạt khi rê chuột */
+}
+
+/* Navigation Button */
+.nav { 
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.nav button {
+    margin: 0 10px; 
+    width: 3rem;
+    background-color: #333333; 
+    color: #fbeedf; 
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav button:hover {
+    background-color: #555555;
+}
+
+.nav .page-number {
+    color: #333333; 
+    display: flex; 
+    align-items: center;
+}
+
+.nav .page-number input {
+    width: 3rem;
+    text-align: center; 
+    color: #333333; 
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background: transparent;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+/* Hide arrows in number input */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: #fbeedf; /* Nền màu giống với nền trang để hòa hợp */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho khung tìm kiếm */
+    z-index: 1000; /* Đảm bảo thanh tìm kiếm luôn ở trên cùng */
+}
+
+/* Search Input */
+#search {
+    width: 70%;
+    height: 3rem;
+    font-size: 20px;
+    padding: 0 15px;
+    border: 2px solid #333333;
+    border-radius: 25px;
+    background-color: #ffffff; /* Nền trắng */
+    color: #333333; /* Màu chữ đậm */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    transition: all 0.3s ease-in-out;
+}
+
+#search:focus {
+    border-color: #ff8c00; /* Màu viền cam nhạt khi focus */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Đổ bóng khi focus */
+    outline: none; /* Bỏ viền outline mặc định */
+}
