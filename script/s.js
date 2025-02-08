@@ -93,7 +93,7 @@ const renderObjects = () => {
             <div class="image-container">
                 <img src="${obj.img}" alt="">
                 <div class="image-overlay">
-                    <a href="${obj.download}" target="_blank"><i class="fa-solid fa-download"></i></a>
+                    <a href="https://youtube.com/shorts/J3zAhNUXLMA?si=ZY8PdcLKJG7vzAFe" target="_blank"><i class="fa-solid fa-download"></i></a>
                     <a href="${obj.source}" target="_blank"><i class="fa-solid fa-link"></i></a>
                 </div>
             </div>
